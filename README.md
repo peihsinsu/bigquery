@@ -70,3 +70,33 @@ bq.job.load(prjId, 'test', 'testtb1', data, function(e,r,d){
 })
 ```
 PS: The insertId use for prevent the duplicate insert of data.
+
+## Create Dataset & Table
+
+Create dataset and table, the schema please ref: https://developers.google.com/bigquery/preparing-data-for-bigquery
+
+```
+bq.dataset.create(prjId, 'dataset_name', function(e,r,d){
+  if(e) console.log(e);
+  console.log(d);
+});
+
+var schema = {
+  "fields": [
+   {
+    "name": "field1",
+    "type": "string",
+    "description": "test"
+   },
+   {
+    "name": "field2",
+    "type": "integer",
+    "description": "test for int"
+   }
+  ]
+ };
+bq.table.create(prjId, 'dataset_name', 'table_name', schema, function(e,r,d){
+  if(e) console.log(e);
+  console.log(d);
+});
+```

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "google-api-utility": "*",
-    "nodeutil": "0.0.29"
+    "nodeutil": "0.0.29",
+    "underscore": "~1.6.0"
   }
 }

@@ -100,3 +100,39 @@ bq.table.create(prjId, 'dataset_name', 'table_name', schema, function(e,r,d){
   console.log(d);
 });
 ```
+
+## Get Table
+
+```
+bq.table.get(prjId, 'test123', 'table_name', function(e,r,d){
+  if(e) console.log(e);
+  console.log(d);
+});
+```
+
+## Delete Table
+
+```
+bq.table.delete(prjId, 'dataset_name', 'table_name', function(e,r,d){
+  if(e) console.log(e);
+  console.log(d);
+});
+```
+
+## Get Dataset
+
+```
+bq.dataset.get(prjId, 'dataset_name', function(e,r,d){
+  if(e) console.log(e);
+  console.log(d);
+});
+```
+
+## Delete Dataset
+
+```
+bq.dataset.delete(prjId, 'dataset_name', 'table_name2', function(e,r,d){
+  if(e) console.log(e);
+  console.log(d);
+});
+```

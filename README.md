@@ -1,7 +1,9 @@
 # bigquery
-----
 
 This is a simple sdk for using google bigquery. Still working... if any problem, please let me know.
+Want to know what is BigQuery? Look my slide:
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/31484765" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/peihsinsu/google-bigquery-introduction" title="Google BigQuery introduction" target="_blank">Google BigQuery introduction</a> </strong> from <strong><a href="http://www.slideshare.net/peihsinsu" target="_blank">Simon Su</a></strong> </div>
 
 ## Installation
 

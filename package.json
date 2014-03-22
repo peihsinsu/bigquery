@@ -1,0 +1,8 @@
+{
+  "name": "bigquery",
+  "version": "0.0.1",
+  "dependencies": {
+    "google-api-utility": "*",
+    "nodeutil": "0.0.29"
+  }
+}

@@ -1,19 +1,19 @@
-bigquery
+# bigquery
 ----
 
-This is a simple sdk for using google bigquery.
+This is a simple sdk for using google bigquery. Still working... if any problem, please let me know.
 
-# Installation
+## Installation
 
 ```
 npm install bigquery
 ```
 
-# Apply service account
+## Apply service account
 
 Follow the doc: http://gappsnews.blogspot.tw/2013/10/connect-cloud-platform-bigquery-using.html
 
-# Convert p12 key
+## Convert p12 key
 From admin console, create a service account, save the client_secrets.json and it's key
 ex: Translate p12 to pem
 ```
@@ -21,7 +21,7 @@ openssl pkcs12 -in privatekey.p12 -out privatekey.pem -nocerts
 openssl rsa -in privatekey.pem -out key.pem
 ```
 
-# Initial
+## Initial
 
 Load bigquery lib, specify your project id then setup the service account and the client_secret.json file path, pem key file path for auth use.
 
@@ -37,7 +37,7 @@ bq.init({
 });
 ```
 
-# Do Query
+## Do Query
 
 Query the dataset that you have. The sample bellow is to query the public dataset of wikipedia.
 
@@ -48,24 +48,25 @@ bq.job.query(prjId, 'select count(*) from publicdata:samples.wikipedia', functio
 });
 ```
 
-# Load data
+## Load data
 
 Before load data, you must create your dataset and table first. After that, you can use the following code to load data. (In this case test is the dataset id, testtb1 is the table name.)
 
 ```
 var data = [
  {
-   "insertId": "201403221228",
+   "insertId": "201403221228", //option
    "json": {
-     "name": "simon3",
+     "name": "simon",
      "sex": "M",
      "age": 35
    }
  }
 ];
+
 bq.job.load(prjId, 'test', 'testtb1', data, function(e,r,d){
   if(e) console.log(e);
   console.log(JSON.stringify(d));
 })
 ```
-
+PS: The insertId use for prevent the duplicate insert of data.

@@ -35,7 +35,6 @@ var bq = require('bigquery')
   , prjId = 'your-bigquery-project-id'; //you need to modify this
 
 bq.init({
-  scope: 'https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/cloud-platform',
   client_secret: '/path-to-client_secret.json',
   key_pem: '/path-to-key.pem'
 });

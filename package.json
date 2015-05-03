@@ -1,9 +1,9 @@
 {
   "name": "bigquery",
   "version": "0.0.3",
-  repository:
-   { type: 'git',
-     url: 'https://github.com/peihsinsu/bigquery.git' },
+  "repository":
+   { "type": "git",
+     "url": "https://github.com/peihsinsu/bigquery.git" },
   "dependencies": {
     "google-api-utility": "*",
     "nodeutil": "0.0.29",

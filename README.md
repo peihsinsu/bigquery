@@ -25,7 +25,7 @@ or
 openssl pkcs12 -in privatekey.p12 -nodes -nocerts > key.pem
 ```
 
-## Initial
+## Initial using old client_secret.json (will deprecated)
 
 Load bigquery lib, specify your project id then setup the service account and the client_secret.json file path, pem key file path for auth use.
 
@@ -39,6 +39,18 @@ bq.init({
   key_pem: '/path-to-key.pem'
 });
 ```
+
+## Initial using client_email directly
+
+About 2015Q1 end, google start to deprecate the client_secret file download. You can change the init method like this:
+
+```
+bq.init({
+  client_email: 'your-client-email@developer.gserviceaccount.com',
+  key_pem: '/path-to-key.pem'
+});
+```
+
 
 ## Do Query
 

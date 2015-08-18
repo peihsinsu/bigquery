@@ -65,7 +65,7 @@ bq.job.query(prjId, 'select count(*) from publicdata:samples.wikipedia', functio
 
 ## Get Query Results
 
-Retrieve results from previous query.  Larger queries will timeout and respond before ther esults are collected.  Use this to retrieve the results.  Below is an example.
+Retrieve results from a previously run query.  Larger queries will timeout and respond with no data before the results are collected.  Use this to retrieve the results.  Below is an example of querying and waiting for results.
 
 ```
 bq.job.query(prjId, 'select count(*) from publicdata:samples.wikipedia', function(e,r,d){

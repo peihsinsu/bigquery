@@ -63,6 +63,23 @@ bq.job.query(prjId, 'select count(*) from publicdata:samples.wikipedia', functio
 });
 ```
 
+## Get Query Results
+
+Retrieve results from previous query.  Larger queries will timeout and respond before ther esults are collected.  Use this to retrieve the results.  Below is an example.
+
+```
+bq.job.query(prjId, 'select count(*) from publicdata:samples.wikipedia', function(e,r,d){
+  if(e) console.log(e);
+  if(d.jobIsComplete){
+      console.log(JSON.stringify(d));
+  } else {
+       bq.job.getQueryResults(prjId, d.jobReference.jobId, function(e,r,d){
+          console.log(JSON.stringify(d));
+       }
+  }
+});
+```
+
 ## Load data
 
 Before load data, you must create your dataset and table first. After that, you can use the following code to load data. (In this case test is the dataset id, testtb1 is the table name.)

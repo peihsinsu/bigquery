@@ -4,6 +4,8 @@
   "repository":
    { "type": "git",
      "url": "https://github.com/peihsinsu/bigquery.git" },
+  "author": "peihsinsu",
+  "contributor": "Andrew Boshardy",
   "dependencies": {
     "google-api-utility": "*",
     "nodeutil": "0.0.29",

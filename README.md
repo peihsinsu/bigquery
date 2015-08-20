@@ -168,3 +168,16 @@ bq.dataset.delete(prjId, 'dataset_name', 'table_name2', function(e,r,d){
   console.log(d);
 });
 ```
+
+## Other request timeout parameters
+
+If you want to add timeout parameter to restrict to your bigquery api request time. You can add timeout parameter to the init() like:
+
+```
+bq.init({
+  client_secret: __dirname + '/client_secret.json',
+  key_pem: __dirname + '/key.pem', 
+  timeout:1000
+}); 
+```
+

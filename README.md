@@ -9,11 +9,11 @@ Want to know what is BigQuery? Look my slide: http://www.slideshare.net/peihsins
 npm install bigquery
 ```
 
-## Apply service account (If use old version service account...)
+## Apply service account 
 
 Follow the doc: http://gappsnews.blogspot.tw/2013/10/connect-cloud-platform-bigquery-using.html
 
-## Convert p12 key
+## Convert p12 key (If use old version service account...)
 From admin console, create a service account, save the client_secrets.json and it's key
 ex: Translate p12 to pem
 ```

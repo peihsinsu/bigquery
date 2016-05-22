@@ -9,7 +9,7 @@ Want to know what is BigQuery? Look my slide: http://www.slideshare.net/peihsins
 npm install bigquery
 ```
 
-## Apply service account
+## Apply service account (If use old version service account...)
 
 Follow the doc: http://gappsnews.blogspot.tw/2013/10/connect-cloud-platform-bigquery-using.html
 
@@ -25,6 +25,41 @@ or
 openssl pkcs12 -in privatekey.p12 -nodes -nocerts > key.pem
 ```
 
+## Initial using Service Account json_file
+
+If you are create the service account after 2015Q2, you will find the service account provide a json file formate download. The json file is like: 
+
+```
+{
+  "private_key_id": "e7************************************e8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIC***....skip...****AFW1Y\n-----END PRIVATE KEY-----\n",
+  "client_email": "86*********8-if***************************pq2@developer.gserviceaccount.com",
+  "client_id": "86*********8-if***************************pq2.apps.googleusercontent.com",
+  "type": "service_account"
+}
+```
+
+The file is already include the secret file and the account information. We support to use the file for easy auth.
+
+```
+var bq = require('bigquery')
+
+bq.init({
+  json_file: '/path/to/your-service-account-json-file.json'
+});
+```
+
+## Initial using client_email directly
+
+About 2015Q1 end, google start to deprecate the client_secret file download. You can change the init method like this:
+
+```
+bq.init({
+  client_email: 'your-client-email@developer.gserviceaccount.com',
+  key_pem: '/path-to-key.pem'
+});
+```
+
 ## Initial using old client_secret.json (will deprecated)
 
 Load bigquery lib, specify your project id then setup the service account and the client_secret.json file path, pem key file path for auth use.
@@ -36,17 +71,6 @@ var bq = require('bigquery')
 
 bq.init({
   client_secret: '/path-to-client_secret.json',
-  key_pem: '/path-to-key.pem'
-});
-```
-
-## Initial using client_email directly
-
-About 2015Q1 end, google start to deprecate the client_secret file download. You can change the init method like this:
-
-```
-bq.init({
-  client_email: 'your-client-email@developer.gserviceaccount.com',
   key_pem: '/path-to-key.pem'
 });
 ```

@@ -1,14 +1,14 @@
 {
   "name": "bigquery",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository":
    { "type": "git",
      "url": "https://github.com/peihsinsu/bigquery.git" },
   "author": "peihsinsu",
   "contributor": "Andrew Boshardy",
   "dependencies": {
-    "google-api-utility": "*",
-    "nodeutil": "0.0.29",
+    "google-api-utility": "0.0.13",
+    "nodeutil": "0.1.0",
     "underscore": "~1.6.0"
   }
 }
